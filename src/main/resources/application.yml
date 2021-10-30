@@ -2,3 +2,6 @@ api-package: com.zhuche.server.api
 spring:
   profiles:
     active: dev
+  jpa:
+    hibernate:
+      ddl-auto: update

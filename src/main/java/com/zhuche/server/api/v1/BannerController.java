@@ -1,25 +1,29 @@
 package com.zhuche.server.api.v1;
 
-import com.zhuche.server.dto.PersonDTO;
-import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.Range;
+import com.zhuche.server.model.BannerModel;
+import com.zhuche.server.service.BannerService;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
-
 
 @RestController
 @RequestMapping("/banner")
 @Validated
 public class BannerController {
-    @RequestMapping(value = "/test/{name}", method = RequestMethod.POST)
-    public String test(
-            @RequestBody @Validated PersonDTO personDTO,
-            @PathVariable @Length(min = 1, max = 2) String name,
-            @RequestParam @Length(min = 1, max = 2) String page
-            ) {
-        return "success";
+    protected BannerService _bannerService;
+
+    public BannerController(BannerService bannerService) {
+        this._bannerService = bannerService;
+    }
+
+    @GetMapping("/name/{name}")
+    public BannerModel getByName(@PathVariable @NotBlank String name) {
+        BannerModel banner = this._bannerService.getByName(name);
+
+        return banner;
     }
 }

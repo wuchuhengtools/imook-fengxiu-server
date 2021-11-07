@@ -2,6 +2,6 @@ api-package: com.zhuche.server.api
 spring:
   profiles:
     active: dev
-  jpa:
-    hibernate:
-      ddl-auto: create-drop
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: true

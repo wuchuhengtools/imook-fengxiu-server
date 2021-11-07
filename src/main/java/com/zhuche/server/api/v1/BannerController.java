@@ -1,5 +1,6 @@
 package com.zhuche.server.api.v1;
 
+import com.zhuche.server.exception.http.NotFoundException;
 import com.zhuche.server.model.BannerModel;
 import com.zhuche.server.service.BannerService;
 import org.springframework.validation.annotation.Validated;
@@ -23,6 +24,7 @@ public class BannerController {
     @GetMapping("/name/{name}")
     public BannerModel getByName(@PathVariable @NotBlank String name) {
         BannerModel banner = this._bannerService.getByName(name);
+        if (banner == null) throw new NotFoundException(30005);
 
         return banner;
     }

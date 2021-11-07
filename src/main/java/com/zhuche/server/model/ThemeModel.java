@@ -1,24 +1,26 @@
 package com.zhuche.server.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
+@Setter
+@Getter
 @Table(name = "theme")
-public class ThemeModel {
+public class ThemeModel extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String title;
-
+    private String description;
     private String name;
+    private String tplName;
+    private String entranceImg;
+    private String extend;
+    private String internalTopImg;
+    private String titleImg;
+    private Integer online;
 
-    @ManyToMany
-    @JoinTable(
-            name = "theme_spu",
-            joinColumns = @JoinColumn(name = "theme_id"),
-            inverseJoinColumns = @JoinColumn(name = "spu_id")
-    )
-    private List<SpuModel> spuList;
 }

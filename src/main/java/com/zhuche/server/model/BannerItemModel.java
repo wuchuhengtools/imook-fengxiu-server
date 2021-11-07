@@ -1,25 +1,20 @@
 package com.zhuche.server.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "banner_item")
-public class BannerItemModel {
+@Getter
+@Setter
+public class BannerItemModel extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
     private String img;
-
     private String keyword;
-
-    private short type;
-
     private String name;
-
-    protected Long bannerId;
-
-    @ManyToOne
-    @JoinColumn(insertable = false, updatable = false, name = "bannerId")
-    private BannerModel banner;
+    private int type;
 }

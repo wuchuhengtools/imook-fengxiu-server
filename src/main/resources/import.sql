@@ -1,0 +1,1 @@
+INSERT INTO `banner` (`id`, `create_time`, `delete_time`, `update_time`, `description`, `img`, `name`, `title`) VALUES (2, '2021-11-03 19:37:46', NULL, '2021-11-03 19:37:46', '1', '2', '3', '4');

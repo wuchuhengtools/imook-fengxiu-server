@@ -4,7 +4,5 @@ import com.zhuche.server.model.BannerModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface BannerRepository extends JpaRepository<BannerModel, Long> {
-    BannerModel findOneById(Long id);
-
     BannerModel findOneByName(String name);
 }

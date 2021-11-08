@@ -1,1 +1,3 @@
 INSERT INTO `banner` (`id`, `create_time`, `delete_time`, `update_time`, `description`, `img`, `name`, `title`) VALUES (2, '2021-11-03 19:37:46', NULL, '2021-11-03 19:37:46', '1', '2', '3', '4');
+
+INSERT INTO `zhuche`.`spu` (`id`, `create_time`, `delete_time`, `update_time`, `category_id`, `default_sku_id`, `description`, `discount_price`, `for_theme_img`, `img`, `is_test`, `online`, `price`, `root_category_id`, `sketch_spec_id`, `subtitle`, `tags`, `title`) VALUES (1, '2021-11-08 10:21:05', NULL, '2021-11-08 10:21:05', 1, 1, '1', '1', '1', '1', 0, b'1', '1', 1, 1, '1', '1', '1');

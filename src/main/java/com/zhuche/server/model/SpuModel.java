@@ -18,7 +18,7 @@ public class SpuModel extends BaseEntity {
     private String subtitle;
     private Long categoryId;
     private Long rootCategoryId;
-    private Long online;
+    private Boolean online;
 
     @Column(columnDefinition = "varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '文本型价格，有时候SPU需要展示的是一个范围，或者自定义平均价格'")
     private String price;
@@ -37,6 +37,6 @@ public class SpuModel extends BaseEntity {
     @Column( columnDefinition = "tinyint(3) unsigned DEFAULT '0'")
     private Short isTest;
 
-    private String spuThemeImg;
+//    private Object spuThemeImg;
     private String forThemeImg;
 }
